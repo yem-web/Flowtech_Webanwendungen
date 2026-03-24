@@ -10,9 +10,13 @@ PowerPoint vorbereiten: Projektvorstellung, Motivation, Zieldefinition, GANTT, Q
 Alles ins Repository hochladen (nur Bilder / MockUps / PowerPoint)
 
 Phase 2 – Umsetzung (Team)
+
 Person 1: Frontend Startseite (basierend auf demDesign)
+
 Person 2: Unterseiten
+
 Person 3: Buchungsprozess / User Flow
+
 Person 4 (Yasmin) : Backend / API-Anbindungen
 
 Team:
