@@ -31,7 +31,6 @@ CSS verbessern (css/)
 
 Aufgabe:
 
-Design von der Vorlage deiner Freundin übernehmen
 Navigation + Grundlayout einheitlich machen
 
 - Person 2:
