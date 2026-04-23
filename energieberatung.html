@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energieberatung | Flowtech Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      color: #17395f;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #214f84;
+      line-height: 1.1;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #f4ad39;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #dd9725;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #d9e9fb 0%, #9fc1e8 60%, #7ba7d8 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -40px;
+      width: 320px;
+      height: 320px;
+      background: rgba(41, 99, 168, 0.18);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -60px;
+      bottom: -60px;
+      width: 240px;
+      height: 240px;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #ffffff;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.92);
+      max-width: 620px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 22px;
+      color: #2f78ca;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .info-box {
+      background: #4f81bd;
+      color: #ffffff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(28, 68, 112, 0.15);
+    }
+
+    .info-box p {
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+    }
+
+    .info-box ul {
+      padding-left: 18px;
+      margin-bottom: 20px;
+    }
+
+    .info-box li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .image-text img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 28px rgba(28, 68, 112, 0.12);
+    }
+
+    .image-text p {
+      color: #4e6887;
+      margin-bottom: 14px;
+    }
+
+    .quote-section {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    blockquote {
+      font-size: 1.3rem;
+      color: #5a79a0;
+      font-style: italic;
+      padding: 20px 0;
+    }
+
+    blockquote span {
+      display: block;
+      margin-top: 12px;
+      font-size: 1rem;
+      font-style: normal;
+      color: #4172a9;
+    }
+
+    .steps-box {
+      background: #f4ad39;
+      color: #ffffff;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(244, 173, 57, 0.2);
+    }
+
+    .steps-box h3 {
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+    }
+
+    .step {
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .cta-section {
+      margin-top: 26px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, #4f81bd 0%, #5d94d6 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      width: min(460px, 100%);
+      padding: 26px;
+      box-shadow: 0 14px 30px rgba(34, 79, 132, 0.16);
+    }
+
+    .cta-card h3 {
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .cta-card p {
+      margin-bottom: 18px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #dbe6f2;
+      padding: 42px 0;
+      margin-top: 70px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-brand h3 {
+      color: #214f84;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: #5c7591;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 12px;
+      color: #214f84;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 8px;
+      color: #5c7591;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 950px) {
+      .analysis-grid,
+      .quote-section {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section {
+        justify-content: stretch;
+      }
+
+      .cta-card {
+        width: 100%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 60px 0;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .section-title {
+        font-size: 1.55rem;
+      }
+
+      blockquote {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">FLOWtech <span>Services</span></a>
+      <nav class="nav-links">
+        <a href="#analyse">Services</a>
+        <a href="#kontakt" class="btn btn-primary">Login oder Registrieren</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Energieberatung</h1>
+      <p>Individuelle Beratung für eine effizientere und nachhaltige Energienutzung.</p>
+    </div>
+  </section>
+
+  <section id="analyse">
+    <div class="container">
+      <h2 class="section-title">Was wird analysiert?</h2>
+
+      <div class="analysis-grid">
+        <div class="info-box">
+          <p>
+            Im Rahmen unserer Energieberatung analysieren wir Ihre aktuelle Energiesituation ganzheitlich. Dabei betrachten wir sowohl Ihren Energieverbrauch als auch die eingesetzten Systeme und identifizieren gezielt Optimierungspotenziale.
+          </p>
+
+          <ul>
+            <li><strong>Stromverbrauch im Haushalt:</strong> Analyse des aktuellen Energieverbrauchs und Verbrauchsverhaltens.</li>
+            <li><strong>Heizsysteme und Haustechnik:</strong> Bewertung von Heizungsanlagen und deren Effizienz.</li>
+            <li><strong>Geräteeffizienz:</strong> Identifikation von unnötigem Energieverbrauch und Ineffizienzen.</li>
+            <li><strong>Nutzungsverhalten:</strong> Analyse, wie und wann Energie verbraucht wird.</li>
+            <li><strong>Erneuerbare Energien:</strong> Prüfung möglicher Integration von Solarlösungen.</li>
+          </ul>
+
+          <p>Was geht mich Energieverbrauch an?</p>
+          <a href="#" class="more-link">→ Mehr erfahren</a>
+        </div>
+
+        <div class="image-text">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Solar- und Windenergie" />
+          <p>
+            Energie ist längst mehr als nur ein alltäglicher Kostenfaktor. Sie beeinflusst unsere Lebensqualität, unsere Umwelt und die Zukunft kommender Generationen. Dennoch wird das eigene Energieverhalten im Alltag oft unterschätzt oder gar nicht hinterfragt.
+          </p>
+          <p>
+            Eine professionelle Energieberatung hilft dabei, Potenziale zu erkennen, fundierte Entscheidungen zu treffen und aktiv zur Gestaltung einer nachhaltigen Zukunft beizutragen.
+          </p>
+        </div>
+      </div>
+
+      <div class="quote-section">
+        <div>
+          <blockquote>
+            „Die beste Art, die Zukunft vorauszusagen, ist sie zu gestalten."
+            <span>— Peter Drucker</span>
+          </blockquote>
+
+          <div class="steps-box">
+            <h3>So funktioniert's!</h3>
+
+            <div class="step">
+              <strong>1. Registrierung und Anfrage</strong>
+              Über das Formular erstellen Nutzer ein Profil und senden ihre Anfrage für die Energieberatung.
+            </div>
+
+            <div class="step">
+              <strong>2. Analyse der Ausgangssituation</strong>
+              Auf Basis erster Angaben wird der aktuelle Energieverbrauch bewertet und erste Muster erkannt.
+            </div>
+
+            <div class="step">
+              <strong>3. Individuelle Handlungsempfehlungen</strong>
+              Nutzer erhalten verständliche Einschätzungen und konkrete Hinweise zu möglichen Verbesserungen.
+            </div>
+
+            <div class="step">
+              <strong>4. Maßnahmen umsetzen</strong>
+              Mit klaren Empfehlungen können Einsparpotenziale genutzt und die Energieeffizienz verbessert werden.
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <div class="cta-card">
+            <h3>Starten Sie jetzt Ihre Flow Journey !</h3>
+            <p>Ihre Registrierung ist nur wenige Klicks entfernt und der erste Schritt zu mehr Energieeffizienz.</p>
+            <a href="#kontakt" class="btn btn-primary">Registrieren</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="kontakt">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>FLOWtech Services</h3>
+        <p>Ihr smarter Begleiter für einen bewussten und effizienten Stromverbrauch.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>Features</h4>
+          <a href="#">Core features</a>
+          <a href="#">Pro experience</a>
+          <a href="#">Integrations</a>
+        </div>
+
+        <div>
+          <h4>Learn more</h4>
+          <a href="#">Blog</a>
+          <a href="#">Case studies</a>
+          <a href="#">Customer stories</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="#">Contact</a>
+          <a href="#">Support</a>
+          <a href="#">Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
