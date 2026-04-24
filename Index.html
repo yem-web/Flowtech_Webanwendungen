@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flowtech Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     }
 
     body {
@@ -39,7 +45,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .navbar {
@@ -51,7 +57,7 @@
 
     .logo {
       font-size: 1.5rem;
-      font-weight: bold;
+      font-weight: 700;
       color: #214f84;
       line-height: 1.1;
     }
@@ -59,7 +65,18 @@
     .logo span {
       display: block;
       font-size: 1rem;
-      font-weight: normal;
+      font-weight: 500;
+    }
+
+    .logo-img {
+      height: 95px;
+      width: auto;
+    }
+
+    .footer-logo {
+      height: 70px;
+      width: auto;
+      margin-bottom: 12px;
     }
 
     .nav-links {
@@ -67,23 +84,24 @@
       align-items: center;
       gap: 18px;
       font-size: 0.95rem;
+      font-weight: 600;
     }
 
     .btn {
       display: inline-block;
       padding: 12px 22px;
-      border-radius: 10px;
+      border-radius: 6px;
       font-weight: 600;
       transition: 0.25s ease;
     }
 
     .btn-primary {
-      background: #f5ad35;
+      background: #123f73;
       color: #fff;
     }
 
     .btn-primary:hover {
-      background: #de971f;
+      background: #0f3560;
     }
 
     .btn-secondary {
@@ -96,33 +114,16 @@
     }
 
     .hero {
-      background: linear-gradient(180deg, #cfe2f6 0%, #4d86c5 45%, #1a4674 100%);
+      background-image: url("FlowTechBanner.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
-      padding: 90px 0 120px;
+      min-height: 840px;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-    }
-
-    .hero::before {
-      width: 420px;
-      height: 420px;
-      top: -120px;
-      right: -100px;
-    }
-
-    .hero::after {
-      width: 260px;
-      height: 260px;
-      top: 80px;
-      left: -80px;
+      display: flex;
+      align-items: flex-start;
     }
 
     .hero-content {
@@ -130,19 +131,15 @@
       z-index: 1;
       max-width: 760px;
       text-align: center;
-      margin: 0 auto;
+      margin: 95px auto 0;
     }
 
     .hero h1 {
       font-size: clamp(2rem, 4vw, 3.3rem);
       line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      opacity: 0.95;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
+      font-weight: 800;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
     }
 
     .hero-buttons {
@@ -160,12 +157,14 @@
       font-size: clamp(1.8rem, 3vw, 2.5rem);
       margin-bottom: 20px;
       color: #214f84;
+      font-weight: 800;
     }
 
     .text-block p {
       margin-bottom: 16px;
       color: #35577b;
       max-width: 950px;
+      font-size: 0.98rem;
     }
 
     .goal {
@@ -181,16 +180,16 @@
 
     .card {
       background: #fff;
-      border-radius: 18px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(22, 58, 99, 0.08);
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
       border: 1px solid #e3ebf4;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 30px rgba(22, 58, 99, 0.14);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(22, 58, 99, 0.12);
     }
 
     .card img {
@@ -207,6 +206,7 @@
       font-size: 1.2rem;
       margin-bottom: 10px;
       color: #214f84;
+      font-weight: 700;
     }
 
     .card p {
@@ -216,7 +216,7 @@
     }
 
     .card a {
-      font-weight: bold;
+      font-weight: 700;
       color: #214f84;
     }
 
@@ -229,6 +229,7 @@
     .footer-content {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 40px;
       flex-wrap: wrap;
     }
@@ -240,11 +241,42 @@
     .footer-brand h3 {
       color: #214f84;
       margin-bottom: 12px;
+      font-weight: 700;
     }
 
     .footer-brand p {
       color: #5c7591;
       font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #214f84;
+      transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+      color: #123f73;
+    }
+
+    .social-icons .material-symbols-outlined {
+      font-size: 24px;
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
     }
 
     .footer-links {
@@ -256,6 +288,7 @@
     .footer-links h4 {
       margin-bottom: 12px;
       color: #214f84;
+      font-weight: 700;
     }
 
     .footer-links a {
@@ -263,6 +296,7 @@
       margin-bottom: 8px;
       color: #5c7591;
       font-size: 0.95rem;
+      transition: color 0.2s ease;
     }
 
     .footer-links a:hover {
@@ -284,15 +318,35 @@
         justify-content: space-between;
         flex-wrap: wrap;
       }
+
+      .footer-content {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 600px) {
       .hero {
-        padding: 70px 0 90px;
+        min-height: 500px;
+        background-position: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        margin: 70px auto 0;
+        padding: 0 10px;
       }
 
       .section-title {
         font-size: 1.7rem;
+      }
+
+      .logo-img {
+        height: 45px;
+      }
+
+      .footer-logo {
+        height: 50px;
+        margin-bottom: 12px;
       }
 
       .btn {
@@ -302,6 +356,16 @@
 
       .hero-buttons {
         flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .footer-links {
+        gap: 30px;
+        flex-direction: column;
       }
     }
   </style>
@@ -309,7 +373,9 @@
 <body>
   <header>
     <div class="container navbar">
-      <a href="#" class="logo">FLOWtech <span>Services</span></a>
+      <a href="#">
+        <img src="FlowTech.png" alt="Flowtech Logo" class="logo-img">
+      </a>
 
       <nav class="nav-links">
         <a href="#services">Services</a>
@@ -322,11 +388,7 @@
   <section class="hero">
     <div class="container hero-content">
       <h1>Moderne Lösungen für Energieinfrastruktur und nachhaltige Technologien</h1>
-      <p>
-        Flowtech Services hilft dabei, Stromverbrauch verständlich zu machen,
-        Energiepotenziale zu erkennen und fundierte Entscheidungen für eine
-        effizientere Zukunft zu treffen.
-      </p>
+
       <div class="hero-buttons">
         <a href="#services" class="btn btn-secondary">Services</a>
         <a href="#kontakt" class="btn btn-primary">Login oder Registrieren</a>
@@ -338,13 +400,14 @@
     <div class="container text-block">
       <h2 class="section-title">Die Realität hinter unserem Energieproblem</h2>
       <p>
-        In den letzten Jahren hat sich gezeigt, wie stark Energiepreise und Versorgungssicherheit unseren Alltag und unsere Wirtschaft beeinflussen. Viele Menschen wissen zwar, dass Strom teuer geworden ist, erkennen aber nicht genau, wo im Haushalt oder im Unternehmen unnötig Energie verbraucht wird.
+       In den letzten Jahren hat sich gezeigt, wie stark Energiepreise und Versorgungssicherheit unseren Alltag und unsere Wirtschaft beeinflussen. Seit der globalen Energiekrise um 2021-2023 sind die durchschnittlichen Energiekosten für Haushalte weltweit weiterhin um etwa 4% höher als vor der Krise, trotz leichter Senkungen seit den Spitzenwerten. Gleichzeitig gehören Energieausgaben für viele Familien zu den drei größten Lebenshaltungskosten nach Wohnen und Lebensmitteln.
       </p>
       <p>
-        Genau hier setzt Flowtech Services an: Wir schaffen Transparenz, zeigen Verbrauchsmuster auf und helfen dabei, ineffiziente Geräte, Gewohnheiten oder Prozesse frühzeitig zu erkennen. Dadurch können Kosten reduziert und gleichzeitig nachhaltigere Entscheidungen getroffen werden.
+        In Europa und vielen Teilen der Welt sind die Strom  und Gaspreise seit 2019 deutlich gestiegen - in einigen Ländern zahlen Privathaushalte heute deutlich mehr für Strom als energieintensive Industriekunden.
+        Diese Preisentwicklung trifft vor allem geringere Einkommensgruppen besonders stark: In vielen Industriestaaten geben mehr als 120 Millionen Haushalte mehr als 10% ihres Einkommens für Energie aus, was ihren finanziellen Spielraum drastisch einschränkt.
       </p>
       <p>
-        Unser Ziel ist nicht nur Information, sondern echte Orientierung. Nutzer sollen verständliche Daten, klare Empfehlungen und einen einfachen Einstieg in moderne Energielösungen erhalten.
+        Doch es geht nicht nur um Kosten: Die Art, wie Energie erzeugt, verteilt und genutzt wird, bestimmt, wie resilient unsere Gesellschaft und Wirtschaft auf Krisen reagieren kann. Geopolitische Spannungen, schwankende Rohstoffmärkte, Abhängigkeiten von Importen und die Auswirkungen des Klimawandels zeigen, wie verwundbar traditionelle Energiesysteme sind - und wie dringend wir technologische, politische und gesellschaftliche Lösungen brauchen.
       </p>
     </div>
   </section>
@@ -353,10 +416,9 @@
     <div class="container text-block">
       <h2 class="section-title">Unser Ziel</h2>
       <p>
-        Wir möchten komplexe Herausforderungen rund um Energieverbrauch und Effizienz sichtbar machen und verständlich aufbereiten. Statt Nutzer mit Zahlen zu überfordern, bieten wir eine klare und intuitive Plattform, die Handlungsmöglichkeiten direkt aufzeigt.
-      </p>
-      <p>
-        Flowtech Services soll Menschen und Unternehmen befähigen, ihren Energieverbrauch aktiv zu verbessern, langfristig Kosten zu sparen und gleichzeitig einen Beitrag zu mehr Nachhaltigkeit zu leisten.
+        Wir möchten diese Herausforderungen sichtbar machen und für verständliche Informationen sorgen, damit Menschen nicht passiv mit steigenden Kosten und Unsicherheiten konfrontiert werden, sondern aktiv informiert, befähigt und handlungsfähig sind.
+        Unser Ziel ist es, Sorge durch Wissen zu ersetzen: Wir wollen ein Bewusstsein dafür schaffen, wie Energie funktioniert, warum Preise steigen oder fallen, welche Rolle erneuerbare Energien und Effizienz spielen und wie jeder Einzelne – privat oder im Unternehmen – Chancen der Energiewende nutzen kann.
+        Durch verständliche Erklärungen, praktische Lösungsansätze und digitale Services möchten wir Nutzer befähigen, von unwissend überfordert zu interessiert und handlungsbereit zu werden – mit dem Fokus auf nachhaltiger Energieinformation und zukunftsfähigen Entscheidungen.
       </p>
     </div>
   </section>
@@ -367,7 +429,7 @@
 
       <div class="services-grid">
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Solar- und Windenergie" />
+          <img src="photovoltaik.jpg" alt="Solar- und Windenergie" />
           <div class="card-content">
             <h3>Energieberatung</h3>
             <p>
@@ -378,7 +440,7 @@
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Windrad" />
+          <img src="windraeder.jpg" alt="Windrad" />
           <div class="card-content">
             <h3>Energie-Check</h3>
             <p>
@@ -389,7 +451,7 @@
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80" alt="Stromleitungen" />
+          <img src="Stromnetze.jpg" alt="Stromleitungen" />
           <div class="card-content">
             <h3>Smart Meter Lösungen</h3>
             <p>
@@ -405,8 +467,20 @@
   <footer id="kontakt">
     <div class="container footer-content">
       <div class="footer-brand">
-        <h3>FLOWtech Services</h3>
+        <img src="FlowTech.png" alt="Flowtech Logo" class="footer-logo">
         <p>Ihr smarter Begleiter für einen bewussten und effizienten Stromverbrauch.</p>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <span class="material-symbols-outlined">photo_camera</span>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <span class="material-symbols-outlined">business</span>
+          </a>
+          <a href="#" aria-label="X">
+            <span class="material-symbols-outlined">close</span>
+          </a>
+        </div>
       </div>
 
       <div class="footer-links">
@@ -422,6 +496,7 @@
           <a href="#">Blog</a>
           <a href="#">Case studies</a>
           <a href="#">Customer stories</a>
+          <a href="#">Best practies</a>
         </div>
 
         <div>
