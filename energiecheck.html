@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energiecheck | Flowtech Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: #f3f3f3; color: #17395f; line-height: 1.45; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1220px, 92%); margin: 0 auto; }
+
+    header { background: #fff; padding: 18px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .logo { display:flex; align-items:center; }
+    .logo img { width: 112px; height: auto; display:block; }
+    .nav-links { display:flex; align-items:center; gap: 18px; font-size: .95rem; }
+    .btn { display:inline-block; padding: 11px 18px; border-radius: 10px; font-weight: 600; transition: .2s ease; }
+    .btn-primary { background: #214f84; color: #fff; }
+    .btn-primary:hover { background: #163a63; }
+    .cta-btn { background: #f4ad39; color: #fff; padding: 14px 28px; border-radius: 12px; font-weight: 700; display:inline-block; }
+    .cta-btn:hover { background: #df9824; }
+
+    .hero {
+      background: #245f99 url('energiecheck_hero.png') center center/cover no-repeat;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after { content: none; }
+    .hero-inner { position: relative; z-index: 1; padding: 34px 0 32px; min-height: 180px; display:flex; align-items:center; }
+    .hero-text { max-width: 720px; }
+    .hero h1 { font-size: clamp(2.2rem, 4vw, 3.1rem); line-height: 1.05; margin-bottom: 8px; }
+    .hero p { font-size: clamp(1rem, 1.7vw, 1.25rem); max-width: 740px; }
+
+    section { padding: 18px 0; }
+    .split { display:grid; grid-template-columns: 1.2fr .78fr; gap: 36px; align-items:start; }
+    .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items:start; }
+    .panel-green { background:#93e232; color:#fff; padding: 28px; min-height: 100%; }
+    .panel-blue { background:#163f6d; color:#fff; padding: 34px 0 46px; margin-top: 8px; }
+    .section-title { color:#1e5fa0; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height:1.1; margin-bottom: 14px; font-weight: 800; }
+    .section-title.white, .sub-title.white { color:#fff; }
+    .sub-title { color:#1f5e9f; font-size: 1.9rem; line-height:1.15; margin-bottom: 14px; font-weight:800; }
+    p { margin-bottom: 14px; font-size: 1.05rem; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .text-blue { color:#214f84; }
+    .text-muted { color:#5b6f8d; }
+    .text-white { color: rgba(255,255,255,.96); }
+
+    .image-card img, .img-shadow { box-shadow: 0 8px 18px rgba(0,0,0,.08); }
+    .right-tall { max-width: 320px; margin-left: auto; }
+    .image-wide { width:100%; height: 245px; object-fit: cover; }
+    .image-wide.small { height: 230px; }
+    .image-tall { width:100%; height: 360px; object-fit: cover; }
+    .chart-box img { width:100%; height: 250px; object-fit: cover; }
+    .grid-images { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items:start; margin: 16px 0 14px; }
+    .center-image { max-width: 640px; margin: 6px auto 0; }
+
+    .footer-cta { background:#2a6aa4; color:#fff; padding: 40px 0 56px; }
+    .footer-cta .wrap { display:grid; grid-template-columns: 1.15fr .9fr; gap: 36px; align-items:center; }
+
+    footer { background:#fff; border-top:1px solid #dbe6f2; padding:45px 0; }
+    .footer-content { display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+    .footer-brand { max-width:320px; }
+    .footer-brand h3 { color:#214f84; margin-bottom:12px; }
+    .footer-brand p { color:#5c7591; font-size:.95rem; }
+    .footer-logo { width: 112px; height:auto; margin-bottom:12px; }
+    .social-icons { display:flex; gap:12px; align-items:center; margin-top:14px; color:#214f84; }
+    .social-icons .material-symbols-outlined { font-size:24px; line-height:1; }
+    .social-icons .x-icon { font-size:24px; font-weight:700; line-height:1; }
+    .footer-links { display:flex; gap:50px; flex-wrap:wrap; }
+    .footer-links h4 { margin-bottom:12px; color:#214f84; }
+    .footer-links a { display:block; margin-bottom:8px; color:#5c7591; font-size:.95rem; }
+
+    @media (max-width: 950px) {
+      .split, .two-col, .footer-cta .wrap { grid-template-columns: 1fr; }
+      .right-tall { max-width: 100%; }
+      .chart-box img, .image-wide, .image-wide.small, .image-tall { height: auto; }
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .nav-links { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+    }
+    @media (max-width: 640px) {
+      .grid-images { grid-template-columns: 1fr; }
+      .btn, .cta-btn { width:100%; text-align:center; }
+      .nav-links { gap: 12px; }
+      p, li { font-size: .98rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="Index.html" class="logo"><img src="Flowtech_logo.png" alt="Flowtech Services Logo"></a>
+      <nav class="nav-links">
+        <a href="Index.html#services">Services</a>
+        <a href="registrierung.html" class="btn btn-primary energiecheck-btn">
+  Login oder Registrieren
+</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Energy Check</h1>
+        <p>Detaillierte Analyse Ihres Energieverbrauchs zur Identifikation von Einsparpotenzialen</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split">
+      <div>
+        <h2 class="sub-title">Stromverbrauch betrifft uns alle</h2>
+        <p class="text-blue"><strong>Strom begleitet uns jeden Tag, vom Kochen bis zum Aufladen von Geräten. Wie viel wir verbrauchen, wirkt sich nicht nur auf die Kosten in unserem Haushalt aus, sondern auch auf Umwelt und Gesellschaft. In diesem Energiecheck erfahren Sie, warum Strom ein essenzieller Part in unserem Leben spielt, welche Tools und Lösungen benutzt werden und warum es Sinn macht, in diese zu investieren.</strong></p>
+      </div>
+      <div class="right-tall image-card">
+        <img src="windraeder.jpg" alt="Windräder" class="image-tall" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col">
+      <div>
+        <div class="image-card"><img src="Was_zahle_ich_eigentlich.jpg" alt="Stromrechnung" class="image-wide" /></div>
+        <h3 class="sub-title" style="font-size:1.7rem; margin-top:14px;">Stromverbrauch im Haushalt</h3>
+        <p class="text-blue">Der Stromverbrauch hängt stark vom Haushalt ab:</p>
+        <ul class="text-blue">
+          <li>Single-Haushalt: ca. 1.500–2.000 kWh/Jahr</li>
+          <li>Familie mit Kindern: ca. 3.500–5.000 kWh/Jahr</li>
+        </ul>
+        <p class="text-blue">Das bedeutet Stromkosten zwischen ~900€ und 1.800€ pro Jahr – abhängig von Nutzung und Geräten.</p>
+        <p class="text-blue">Vor 50 Jahren war der Verbrauch deutlich niedriger, da weniger elektrische Geräte vorhanden waren und Technik wie Kühlschränke, Fernseher oder Computer seltener genutzt wurde. Heute sind fast alle Haushalte stark elektrifiziert, was den Gesamtverbrauch erhöht.</p>
+      </div>
+      <div>
+        <h3 class="sub-title" style="font-size:1.7rem;">Strompreise: Was zahle ich eigentlich?</h3>
+        <p class="text-blue">Der Strompreis setzt sich in Deutschland aus drei Hauptbestandteilen zusammen:</p>
+        <ul class="text-blue">
+          <li>Energieeinkauf & Vertrieb: Kosten für Strom am Markt und Bereitstellung durch den Anbieter.</li>
+          <li>Netzentgelte: Gebühren für Transport, Verteilung und Betrieb der Stromnetze.</li>
+          <li>Steuern, Abgaben & Umlagen: Staatliche Beiträge, z.B. Stromsteuer, EEG-Umlage, Mehrwertsteuer.</li>
+        </ul>
+        <p class="text-blue">Im Jahr 2025 lag der durchschnittliche Haushaltsstrompreis bei ca. 39,6 ct/kWh, wobei etwa ein Drittel Steuern & Umlagen, ein Drittel Netzentgelte und knapp über 40% Energieeinkauf & Vertrieb ausmachen.</p>
+        <div class="image-card" style="margin-top:18px;"><img src="Stromverbrauch_im_Haushalt.jpg" alt="Waschmaschine im Haushalt" class="image-wide small" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col" style="gap:0;">
+      <div style="padding-right:26px;">
+        <div class="image-card"><img src="Preise_steigen.jpg" alt="Steigende Strompreise" class="image-wide small" /></div>
+        <h3 class="sub-title" style="font-size:1.7rem; margin-top:16px;">Konsequenzen & Ausblick</h3>
+        <p class="text-blue">Hoher Verbrauch belastet:</p>
+        <ul class="text-blue">
+          <li>Geldbeutel: höhere Stromkosten für Haushalte</li>
+          <li>Umwelt: mehr CO₂-Emissionen</li>
+          <li>Zukunft: steigende Preise ohne Effizienzmaßnahmen</li>
+        </ul>
+        <p class="text-blue">Fazit: Ohne bewusstes Sparen und effiziente Nutzung wird Strom auch in Zukunft teuer bleiben – selbst bei zunehmendem Anteil erneuerbarer Energien.</p>
+      </div>
+      <div class="panel-green">
+        <h3 class="sub-title white" style="font-size:1.8rem;">Energiemix & Versorgung</h3>
+        <p class="text-white">Deutschland erzeugt Strom aus einem diversifizierten Mix:</p>
+        <ul class="text-white">
+          <li>55–60% erneuerbare Energien (Wind, Solar, Biomasse, Wasserkraft)</li>
+          <li>Rest: fossile Energieträger und Kernenergie (Restanteil wird schrittweise reduziert)</li>
+        </ul>
+        <p class="text-white">Die Stromversorgung ist stark vernetzt und wetterabhängig. Netzstabilität erfordert Reservekraftwerke, Speicher und intelligente Steuerung, was die Kosten weiter beeinflusst.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col">
+      <div class="chart-box image-card"><img src="Strompreisentwicklung.webp" alt="Strompreisentwicklung" /></div>
+      <div class="chart-box image-card"><img src="Strompreis_Balkendiagramm.png" alt="Strompreis Balkendiagramm" /></div>
+    </div>
+  </section>
+
+  <section class="panel-blue">
+    <div class="container">
+      <h2 class="section-title white">Strom messen, verstehen und steuern</h2>
+      <p class="text-white">Stromverbrauch wird in Kilowattstunden (kWh) gemessen – das ist die Einheit, nach der Ihr Energieversorger abrechnet. 1 kWh entspricht dem Verbrauch von 1.000 Watt über eine Stunde. Mit dieser Zahl können Sie vergleichen, wie viel Energie einzelne Geräte, Ihr Haushalt oder Ihre gesamte Organisation verbrauchen.</p>
+      <p class="text-white">Wer den Verbrauch kennt, kann gezielt handeln: Geräte effizient nutzen, Spitzenzeiten vermeiden oder sogar selbst Strom erzeugen.</p>
+
+      <div class="two-col" style="margin-top:26px; align-items:start;">
+        <div>
+          <div class="split" style="grid-template-columns: .72fr 1.28fr; gap:24px; align-items:start;">
+            <div class="image-card"><img src="verantwortungsvolle_person.jpg" alt="Person mit Sicherheitshelm" class="image-wide small" /></div>
+            <div>
+              <h3 class="sub-title white" style="font-size:1.45rem;">Tools & Technologien</h3>
+              <p class="text-white"><strong>a) Smart Meter & Gateways</strong><br>Intelligente Stromzähler liefern Echtzeitdaten über Ihren Verbrauch. Sie zeigen, wann besonders viel Strom verbraucht wird und ermöglichen smarte Steuerungen.</p>
+              <p class="text-white"><strong>b) Verbrauchs-Apps & Geräte</strong><br>Apps auf Smartphone oder Tablet, die den Verbrauch einzelner Geräte oder des gesamten Haushalts anzeigen.</p>
+              <p class="text-white"><strong>c) Eigene Stromerzeugung & erneuerbare Energien</strong><br>Mini-Solaranlagen, kleine Windkraftoptionen oder Batteriespeicher für den Haushalt.</p>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="two-col" style="margin-top:20px; align-items:end;">
+        <div>
+          <h3 class="sub-title white" style="font-size:1.45rem;">Organisation & Interpretation</h3>
+          <ul class="text-white">
+            <li>Nur messen reicht nicht – Verbrauch verstehen ist entscheidend.</li>
+            <li>Ein hoher Wert bei einem Gerät bedeutet nicht unbedingt Verschwendung, sondern kann auf häufige Nutzung oder Ineffizienz hinweisen.</li>
+            <li>Vergleiche mit Durchschnittswerten, saisonalen Schwankungen oder historischen Daten geben Orientierung.</li>
+          </ul>
+        </div>
+        <div class="image-card"><img src="Happy_Person_using_phone.jpg" alt="Person mit Smartphone" class="image-wide small" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta" id="services">
+    <div class="container">
+      <h2 class="section-title white">Was bedeutet das für mich?</h2>
+      <p class="text-white">Die erfassten Werte sind mehr als nur Zahlen – sie zeigen, wie Ihr Alltag Energie nutzt. Ob Küchengeräte, Unterhaltungselektronik oder Ladegeräte im Stand-by: Viele kleine Faktoren summieren sich zu Ihrem gesamten Stromverbrauch.</p>
+      <p class="text-white">Ein Smart Meter oder eine Verbrauchsübersicht hilft Ihnen dabei zu erkennen, wann und wo besonders viel Energie genutzt wird. So lassen sich gezielt Anpassungen vornehmen – etwa durch effizientere Geräte, bewussteren Einsatz oder das Vermeiden unnötiger Laufzeiten.</p>
+      <p class="text-white">Schon kleine Veränderungen können einen spürbaren Unterschied machen – sowohl bei Ihren Kosten als auch beim gesamten Energieverbrauch Ihres Haushalts.</p>
+
+      <div class="grid-images">
+        <div class="image-card"><img src="Energy_Management.jpg" alt="Haus und Energie Management" class="image-wide small" /></div>
+        <div class="image-card"><img src="Smart_Meter_vs_no_Smart_Meter.png" alt="Smart Meter Darstellung" class="image-wide small" /></div>
+      </div>
+      <div class="center-image image-card"><img src="Energie_Infograf.png" alt="Energie Infografik" class="image-wide" style="height: 320px; object-fit: contain; background:#d5ebf0;" /></div>
+    </div>
+  </section>
+
+  <section class="footer-cta" style="padding-top:18px;" id="kontakt">
+    <div class="container wrap">
+      <div>
+        <h2 class="section-title white">Was Sie jetzt tun können</h2>
+        <p class="text-white"><strong>Jetzt den nächsten Schritt gehen...</strong></p>
+        <p class="text-white">Hier kommen wir ins Spiel: Wir unterstützen Sie mit einer fundierten, individuellen Beratung rund um Ihren Stromverbrauch. Gemeinsam analysieren wir Ihre aktuelle Situation und zeigen Ihnen konkrete Möglichkeiten, wie Sie Kosten senken und Energie effizienter nutzen können.</p>
+        <p class="text-white">Dabei begleiten wir Sie Schritt für Schritt durch den gesamten Prozess – von der ersten Analyse bis hin zu konkreten Maßnahmen für Ihren Alltag. So behalten Sie jederzeit den Überblick und können nachhaltige Entscheidungen für sich und Ihre Zukunft treffen.</p>
+        <a href="registrierung.html" class="cta-btn">Jetzt Registrieren!</a>
+      </div>
+      <div class="image-card"><img src="Happy_people_agreeing.jpg" alt="Zufriedene Menschen" class="image-wide small" /></div>
+    </div>
+  </section>
+
+  <footer id="kontakt-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img class="footer-logo" src="Flowtech_logo.png" alt="Flowtech Services Logo">
+        <p>Ihr smarter Begleiter für einen bewussten und effizienten Stromverbrauch.</p>
+        <div class="social-icons" aria-label="Social Media Icons">
+          <span class="material-symbols-outlined" title="Instagram">photo_camera</span>
+          <span class="material-symbols-outlined" title="LinkedIn">business_center</span>
+          <span class="x-icon" title="X">𝕏</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Features</h4>
+          <a href="#">Core features</a>
+          <a href="#">Pro experience</a>
+          <a href="#">Integrations</a>
+        </div>
+        <div>
+          <h4>Learn more</h4>
+          <a href="#">Blog</a>
+          <a href="#">Case studies</a>
+          <a href="#">Customer stories</a>
+          <a href="#">Best practices</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Contact</a>
+          <a href="#">Support</a>
+          <a href="#">Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

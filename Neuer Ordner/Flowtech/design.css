@@ -60,3 +60,7 @@ footer .container {
     display: flex;
     gap: 40px;
 }
+.energiecheck-btn {
+  background-color: #f4a300;
+  color: white;
+}
