@@ -5,35 +5,341 @@
   <meta charset="UTF-8">
   <title>FlowTech</title>
   <link rel="stylesheet" href="design.css">
+
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #163a63;
+    }
+
+    header nav.container {
+      background: #ffffff;
+      padding: 20px 0;
+    }
+
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #214f84;
+      line-height: 1.1;
+    }
+
+    .logo::after {
+      content: "Services";
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: #123f73;
+      font-weight: 600;
+    }
+
+    .nav-links a:not(:first-child):not(:last-child) {
+      display: none;
+    }
+
+    .nav-links a:first-child {
+      display: none;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-actions a:first-child {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 6px;
+      background: #f5ad35;
+      color: white;
+      font-weight: 700;
+    }
+
+    .nav-actions a:last-child {
+      display: none;
+    }
+
+    .home-hero {
+      background-image: url("../../FlowTechBanner.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 840px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .home-hero-content {
+      max-width: 760px;
+      text-align: center;
+      margin: 95px auto 0;
+    }
+
+    .home-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.2;
+      margin-bottom: 24px;
+      font-weight: 800;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .home-hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .home-btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .home-btn-blue {
+      background: #5f8fc3;
+      color: #ffffff;
+    }
+
+    .home-btn-dark {
+      background: #f5ad35;
+      color: #ffffff;
+    }
+
+    .home-section {
+      padding: 80px 0;
+      background: #f5f7fa;
+    }
+
+    .home-section-white {
+      background: #ffffff;
+    }
+
+    .home-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 20px;
+      color: #214f84;
+      font-weight: 800;
+    }
+
+    .home-text p {
+      margin-bottom: 16px;
+      color: #35577b;
+      max-width: 950px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
+      border: 1px solid #e3ebf4;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .service-card-content {
+      padding: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #214f84;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: #4a6583;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .service-card a {
+      font-weight: 700;
+      color: #214f84;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #dbe6f2;
+    }
+
+    footer .container {
+      padding: 45px 0;
+    }
+
+    footer h3,
+    footer h4 {
+      color: #214f84;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #5c7591;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header nav.container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .home-hero {
+        min-height: 520px;
+      }
+
+      .home-hero-content {
+        max-width: 100%;
+        margin: 70px auto 0;
+        padding: 0 10px;
+      }
+
+      .home-hero-buttons {
+        flex-direction: column;
+      }
+
+      .home-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <nav class="container">
-
-    <div class="logo">FlowTech Services</div>
+    <div class="logo">FLOWtech</div>
 
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="energieberatung.html">Energieberatung</a>
-      <a href="energiecheck.html">Energiecheck</a>
-      <a href="postfach.html">Postfach</a>
-      <a href="smartmeter.html">Smart Meter</a>
       <a href="services.html">Services</a>
+      <a href="#problem">Unser Ziel</a>
+      <a href="energieberatung.html">Energieberatung</a>
     </div>
 
     <div class="nav-actions">
-      <a href="registrierung.html">Registrierung</a>
+      <a href="registrierung.html">Login oder Registrieren</a>
       <a href="login.html">Login</a>
     </div>
-
   </nav>
 </header>
 
-<main class="container">
-  <section>
-    <h1>Home</h1>
+<main>
+  <section class="home-hero">
+    <div class="container home-hero-content">
+      <h1>Moderne Lösungen für Energieinfrastruktur und nachhaltige Technologien</h1>
+
+      <div class="home-hero-buttons">
+        <a href="services.html" class="home-btn home-btn-blue">Services</a>
+        <a href="registrierung.html" class="home-btn home-btn-dark">Login oder Registrieren</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section" id="problem">
+    <div class="container home-text">
+      <h2 class="home-title">Die Realität hinter unserem Energieproblem</h2>
+      <p>
+        In den letzten Jahren hat sich gezeigt, wie stark Energiepreise und Versorgungssicherheit unseren Alltag und unsere Wirtschaft beeinflussen. Viele Menschen wissen zwar, dass Strom teuer geworden ist, erkennen aber nicht genau, wo im Haushalt oder im Unternehmen unnötig Energie verbraucht wird.
+      </p>
+      <p>
+        Genau hier setzt Flowtech Services an: Wir schaffen Transparenz, zeigen Verbrauchsmuster auf und helfen dabei, ineffiziente Geräte, Gewohnheiten oder Prozesse frühzeitig zu erkennen. Dadurch können Kosten reduziert und gleichzeitig nachhaltigere Entscheidungen getroffen werden.
+      </p>
+      <p>
+        Unser Ziel ist nicht nur Information, sondern echte Orientierung. Nutzer sollen verständliche Daten, klare Empfehlungen und einen einfachen Einstieg in moderne Energielösungen erhalten.
+      </p>
+    </div>
+  </section>
+
+  <section class="home-section home-section-white">
+    <div class="container home-text">
+      <h2 class="home-title">Unser Ziel</h2>
+      <p>
+        Wir möchten komplexe Herausforderungen rund um Energieverbrauch und Effizienz sichtbar machen und verständlich aufbereiten. Statt Nutzer mit Zahlen zu überfordern, bieten wir eine klare und intuitive Plattform, die Handlungsmöglichkeiten direkt aufzeigt.
+      </p>
+      <p>
+        Flowtech Services soll Menschen und Unternehmen befähigen, ihren Energieverbrauch aktiv zu verbessern, langfristig Kosten zu sparen und gleichzeitig einen Beitrag zu mehr Nachhaltigkeit zu leisten.
+      </p>
+    </div>
+  </section>
+
+  <section class="home-section" id="services">
+    <div class="container">
+      <h2 class="home-title">Services</h2>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="../../photovoltaik.jpg" alt="Solar- und Windenergie">
+          <div class="service-card-content">
+            <h3>Energieberatung</h3>
+            <p>
+              Analyse des Stromverbrauchs, Erkennen von Einsparpotenzialen und verständliche Empfehlungen für den Alltag.
+            </p>
+            <a href="energieberatung.html">Mehr erfahren →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="../../windraeder.jpg" alt="Windrad">
+          <div class="service-card-content">
+            <h3>Energie-Check</h3>
+            <p>
+              Überblick über Verbrauchsdaten, Geräte-Effizienz und mögliche Optimierungen für Haushalt oder Unternehmen.
+            </p>
+            <a href="energiecheck.html">Mehr erfahren →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="../../Stromnetze.jpg" alt="Stromleitungen">
+          <div class="service-card-content">
+            <h3>Smart Meter Lösungen</h3>
+            <p>
+              Bessere Datengrundlage durch digitale Messung und moderne Auswertung für smartere Energieentscheidungen.
+            </p>
+            <a href="smartmeter.html">Mehr erfahren →</a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -41,7 +347,7 @@
  <div class="container">
 
   <section>
-    <h3>FlowTech Services</h3>
+    <h3>FLOWtech Services</h3>
     <p>Ihr smarter Begleiter für einen bewussten und effizienten Stromverbrauch</p>
   </section>
 

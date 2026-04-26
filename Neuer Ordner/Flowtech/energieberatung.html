@@ -3,8 +3,289 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FlowTech</title>
+  <title>Energieberatung | FlowTech</title>
   <link rel="stylesheet" href="design.css">
+
+  <style>
+    .beratung-hero {
+      background-image: url("../../FlowTechBanner.png");
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      min-height: 190px;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .beratung-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.25);
+      margin-bottom: 8px;
+    }
+
+    .beratung-hero p {
+      font-size: 1.1rem;
+      max-width: 620px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    .beratung-section {
+      padding: 70px 0;
+      background: #f4f6f9;
+    }
+
+    .beratung-title {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 22px;
+      color: #2f78ca;
+      font-weight: 800;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .info-box {
+      background: #4f81bd;
+      color: #ffffff;
+      padding: 28px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
+    }
+
+    .info-box p {
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+    }
+
+    .info-box ul {
+      padding-left: 18px;
+      margin-bottom: 20px;
+    }
+
+    .info-box li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .image-text img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
+    }
+
+    .image-text p {
+      color: #4e6887;
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .quote-section {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    blockquote {
+      font-size: 1.3rem;
+      color: #5a79a0;
+      font-style: italic;
+      padding: 20px 0;
+    }
+
+    blockquote span {
+      display: block;
+      margin-top: 12px;
+      font-size: 1rem;
+      font-style: normal;
+      color: #4172a9;
+    }
+
+    .steps-box {
+      background: #f4ad39;
+      color: #ffffff;
+      padding: 26px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(244, 173, 57, 0.18);
+    }
+
+    .steps-box h3 {
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .step {
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .cta-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-height: 420px;
+    }
+
+    .red-arrow {
+      position: absolute;
+      left: -260px;
+      top: 120px;
+      width: 300px;
+      transform: rotate(3deg);
+      z-index: 8;
+    }
+
+    .cta-card {
+      background: #4e95d9;
+      color: #ffffff;
+      width: min(736px, 100%);
+      min-height: 383px;
+      padding: 42px 34px;
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-card h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .cta-card p {
+      margin-bottom: 24px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1rem;
+    }
+
+    .cta-card .btn-primary {
+      background: #efac48;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: 700;
+    }
+
+    .cta-images {
+      position: relative;
+      height: 280px;
+    }
+
+    .cta-images img {
+      position: absolute;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.14);
+      background: #ffffff;
+    }
+
+    .cta-person {
+      width: 170px;
+      height: 115px;
+      top: 10px;
+      left: 20px;
+      z-index: 3;
+    }
+
+    .cta-table {
+      width: 190px;
+      height: 130px;
+      top: 130px;
+      right: 0;
+      z-index: 2;
+    }
+
+    .cta-email {
+      width: 82px;
+      height: 64px;
+      top: 82px;
+      right: 35px;
+      z-index: 6;
+      padding: 8px;
+      object-fit: contain;
+    }
+
+    .cta-calendar {
+      width: 130px;
+      height: 95px;
+      bottom: 45px;
+      left: 35px;
+      z-index: 4;
+    }
+
+    .cta-times {
+      width: 115px;
+      height: 90px;
+      bottom: 15px;
+      left: 95px;
+      z-index: 5;
+    }
+
+    .cta-brief {
+      width: 48px;
+      height: 48px;
+      top: 65px;
+      right: 65px;
+      z-index: 7;
+      object-fit: contain;
+      box-shadow: none;
+      background: transparent;
+    }
+
+    @media (max-width: 950px) {
+      .analysis-grid,
+      .quote-section {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-wrapper {
+        justify-content: stretch;
+        min-height: auto;
+      }
+
+      .red-arrow {
+        display: none;
+      }
+
+      .cta-card {
+        width: 100%;
+        grid-template-columns: 1fr;
+      }
+
+      .cta-images {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -31,9 +312,101 @@
   </nav>
 </header>
 
-<main class="container">
-  <section>
-    <h1>Energieberatung</h1>
+<main>
+  <section class="beratung-hero">
+    <div class="container">
+      <h1>Energieberatung</h1>
+      <p>Individuelle Beratung für eine effizientere und nachhaltige Energienutzung.</p>
+    </div>
+  </section>
+
+  <section id="analyse" class="beratung-section">
+    <div class="container">
+      <h2 class="beratung-title">Was wird analysiert?</h2>
+
+      <div class="analysis-grid">
+        <div class="info-box">
+          <p>
+            Im Rahmen unserer Energieberatung analysieren wir Ihre aktuelle Energiesituation ganzheitlich. Dabei betrachten wir sowohl Ihren Energieverbrauch als auch die eingesetzten Systeme und identifizieren gezielt Optimierungspotenziale.
+          </p>
+
+          <ul>
+            <li><strong>Stromverbrauch im Haushalt:</strong> Analyse des aktuellen Energieverbrauchs und Verbrauchsverhaltens.</li>
+            <li><strong>Heizsysteme und Haustechnik:</strong> Bewertung von Heizungsanlagen und deren Effizienz.</li>
+            <li><strong>Geräteeffizienz:</strong> Identifikation von unnötigem Energieverbrauch und Ineffizienzen.</li>
+            <li><strong>Nutzungsverhalten:</strong> Analyse, wie und wann Energie verbraucht wird.</li>
+            <li><strong>Erneuerbare Energien:</strong> Prüfung möglicher Integration von Solarlösungen.</li>
+          </ul>
+
+          <p>Was geht mich Energieverbrauch an?</p>
+          <a href="#" class="more-link">→ Mehr erfahren</a>
+        </div>
+
+        <div class="image-text">
+          <img src="../../photovoltaik.jpg" alt="Solar- und Windenergie" />
+          <p>
+            Energie ist längst mehr als nur ein alltäglicher Kostenfaktor. Sie beeinflusst unsere Lebensqualität, unsere Umwelt und die Zukunft kommender Generationen. Dennoch wird das eigene Energieverhalten im Alltag oft unterschätzt oder gar nicht hinterfragt.
+          </p>
+          <p>
+            Eine professionelle Energieberatung hilft dabei, Potenziale zu erkennen, fundierte Entscheidungen zu treffen und aktiv zur Gestaltung einer nachhaltigen Zukunft beizutragen.
+          </p>
+        </div>
+      </div>
+
+      <div class="quote-section">
+        <div>
+          <blockquote>
+            „Die beste Art, die Zukunft vorauszusagen, ist sie zu gestalten."
+            <span>— Peter Drucker</span>
+          </blockquote>
+
+          <div class="steps-box">
+            <h3>So funktioniert's!</h3>
+
+            <div class="step">
+              <strong>1. Registrierung und Anfrage</strong>
+              Über das Formular erstellen Nutzer ein Profil und senden ihre Anfrage für die Energieberatung.
+            </div>
+
+            <div class="step">
+              <strong>2. Analyse der Ausgangssituation</strong>
+              Auf Basis erster Angaben wird der aktuelle Energieverbrauch bewertet und erste Muster erkannt.
+            </div>
+
+            <div class="step">
+              <strong>3. Individuelle Handlungsempfehlungen</strong>
+              Nutzer erhalten verständliche Einschätzungen und konkrete Hinweise zu möglichen Verbesserungen.
+            </div>
+
+            <div class="step">
+              <strong>4. Maßnahmen umsetzen</strong>
+              Mit klaren Empfehlungen können Einsparpotenziale genutzt und die Energieeffizienz verbessert werden.
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-wrapper">
+          <img src="../../roter_Pfeil.png" alt="Roter Pfeil" class="red-arrow">
+
+          <div class="cta-card">
+            <div class="cta-text">
+              <h3>Starten Sie jetzt Ihre Flow Journey !</h3>
+              <p>Ihre Registrierung ist nur wenige Klicks entfernt und der erste Schritt zu mehr Energieeffizienz.</p>
+              <a href="registrierung.html" class="btn-primary">Registrieren</a>
+            </div>
+
+            <div class="cta-images">
+              <img src="../../gettyimages-2173588178-612x612.jpg" alt="Beratungsgespräch" class="cta-person">
+              <img src="../../Smart_Meter_vs_no_Smart_Meter.png" alt="Smart Meter Tabelle" class="cta-table">
+              <img src="../../Email.png" alt="Email" class="cta-email">
+              <img src="../../Termin_Kalender.png" alt="Termin Kalender" class="cta-calendar">
+              <img src="../../Terminzeiten.png" alt="Terminzeiten" class="cta-times">
+              <img src="../../Brief_emoji.png" alt="Brief Emoji" class="cta-brief">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 
