@@ -5,13 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Energiecheck | Flowtech Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', Arial, Helvetica, sans-serif; }
     html { scroll-behavior: smooth; }
     body { background: #f3f3f3; color: #17395f; line-height: 1.45; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
-    .container { width: min(1220px, 92%); margin: 0 auto; }
+    .container {
+  width: 92%;
+  max-width: none;
+  margin: 0 auto;
+  }
+    .split {
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 90px;
+}
+
+.two-col {
+  gap: 70px;
+}
 
     header { background: #fff; padding: 18px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
     .navbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
@@ -21,6 +34,8 @@
     .btn { display:inline-block; padding: 11px 18px; border-radius: 10px; font-weight: 600; transition: .2s ease; }
     .btn-primary { background: #214f84; color: #fff; }
     .btn-primary:hover { background: #163a63; }
+    .energiecheck-btn { background:#f4ad39 !important; color:#fff !important; }
+    .energiecheck-btn:hover { background:#df9824 !important; }
     .cta-btn { background: #f4ad39; color: #fff; padding: 14px 28px; border-radius: 12px; font-weight: 700; display:inline-block; }
     .cta-btn:hover { background: #df9824; }
 
@@ -52,13 +67,22 @@
     .text-white { color: rgba(255,255,255,.96); }
 
     .image-card img, .img-shadow { box-shadow: 0 8px 18px rgba(0,0,0,.08); }
-    .right-tall { max-width: 320px; margin-left: auto; }
-    .image-wide { width:100%; height: 245px; object-fit: cover; }
-    .image-wide.small { height: 230px; }
-    .image-tall { width:100%; height: 360px; object-fit: cover; }
-    .chart-box img { width:100%; height: 250px; object-fit: cover; }
+    .right-tall { width: 240px; margin-left: auto; }
+    .right-tall img { width: 240px; height: 320px; object-fit: cover; }
+    .image-wide { width:100%; height:auto; object-fit: contain; }
+    .image-wide.small { height:auto; }
+    .image-tall { width:100%; height:auto; object-fit: contain; }
+    .chart-box img { width:100%; height:auto; object-fit: contain; }
+    .image-card.noshadow img { box-shadow:none; }
     .grid-images { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items:start; margin: 16px 0 14px; }
-    .center-image { max-width: 640px; margin: 6px auto 0; }
+    .grid-images img { height: 210px; object-fit: contain; background:#d6edf2; }
+    .center-image { max-width: 560px; margin: 6px auto 0; }
+    .center-image img { height:auto !important; object-fit: contain !important; }
+    .tools-row { display:grid; grid-template-columns: 290px 1fr; gap:42px; align-items:center; margin-top:30px; }
+    .tools-row img { width:290px; height:285px; object-fit: cover; }
+    .org-row { display:grid; grid-template-columns: 1fr 310px; gap:50px; align-items:center; margin-top:46px; }
+    .org-row img { width:310px; height:190px; object-fit: cover; }
+    .two-col .image-card img { max-width:100%; }
 
     .footer-cta { background:#2a6aa4; color:#fff; padding: 40px 0 56px; }
     .footer-cta .wrap { display:grid; grid-template-columns: 1.15fr .9fr; gap: 36px; align-items:center; }
@@ -77,8 +101,10 @@
     .footer-links a { display:block; margin-bottom:8px; color:#5c7591; font-size:.95rem; }
 
     @media (max-width: 950px) {
-      .split, .two-col, .footer-cta .wrap { grid-template-columns: 1fr; }
-      .right-tall { max-width: 100%; }
+      .split, .two-col, .footer-cta .wrap, .tools-row, .org-row { grid-template-columns: 1fr; }
+      .right-tall { width: 100%; max-width: 320px; margin:0 auto; }
+      .right-tall img { width:100%; height:auto; }
+      .tools-row img, .org-row img { width:100%; height:auto; }
       .chart-box img, .image-wide, .image-wide.small, .image-tall { height: auto; }
       .navbar { flex-direction: column; align-items: flex-start; }
       .nav-links { width: 100%; justify-content: space-between; flex-wrap: wrap; }
@@ -190,22 +216,17 @@
       <p class="text-white">Stromverbrauch wird in Kilowattstunden (kWh) gemessen – das ist die Einheit, nach der Ihr Energieversorger abrechnet. 1 kWh entspricht dem Verbrauch von 1.000 Watt über eine Stunde. Mit dieser Zahl können Sie vergleichen, wie viel Energie einzelne Geräte, Ihr Haushalt oder Ihre gesamte Organisation verbrauchen.</p>
       <p class="text-white">Wer den Verbrauch kennt, kann gezielt handeln: Geräte effizient nutzen, Spitzenzeiten vermeiden oder sogar selbst Strom erzeugen.</p>
 
-      <div class="two-col" style="margin-top:26px; align-items:start;">
+      <div class="tools-row">
+        <div class="image-card"><img src="erneuerbare_energien_nutzen.jpg" alt="Person mit Sicherheitshelm vor Windrädern" /></div>
         <div>
-          <div class="split" style="grid-template-columns: .72fr 1.28fr; gap:24px; align-items:start;">
-            <div class="image-card"><img src="verantwortungsvolle_person.jpg" alt="Person mit Sicherheitshelm" class="image-wide small" /></div>
-            <div>
-              <h3 class="sub-title white" style="font-size:1.45rem;">Tools & Technologien</h3>
-              <p class="text-white"><strong>a) Smart Meter & Gateways</strong><br>Intelligente Stromzähler liefern Echtzeitdaten über Ihren Verbrauch. Sie zeigen, wann besonders viel Strom verbraucht wird und ermöglichen smarte Steuerungen.</p>
-              <p class="text-white"><strong>b) Verbrauchs-Apps & Geräte</strong><br>Apps auf Smartphone oder Tablet, die den Verbrauch einzelner Geräte oder des gesamten Haushalts anzeigen.</p>
-              <p class="text-white"><strong>c) Eigene Stromerzeugung & erneuerbare Energien</strong><br>Mini-Solaranlagen, kleine Windkraftoptionen oder Batteriespeicher für den Haushalt.</p>
-            </div>
-          </div>
+          <h3 class="sub-title white" style="font-size:1.45rem;">Tools & Technologien</h3>
+          <p class="text-white"><strong>a) Smart Meter & Gateways</strong><br>Intelligente Stromzähler liefern Echtzeitdaten über Ihren Verbrauch. Sie zeigen, wann besonders viel Strom verbraucht wird und ermöglichen smarte Steuerungen.</p>
+          <p class="text-white"><strong>b) Verbrauchs-Apps & Geräte</strong><br>Apps auf Smartphone oder Tablet, die den Verbrauch einzelner Geräte oder des gesamten Haushalts anzeigen.</p>
+          <p class="text-white"><strong>c) Eigene Stromerzeugung & erneuerbare Energien</strong><br>Mini-Solaranlagen, kleine Windkraftoptionen oder Batteriespeicher für den Haushalt.</p>
         </div>
-        <div></div>
       </div>
 
-      <div class="two-col" style="margin-top:20px; align-items:end;">
+      <div class="org-row">
         <div>
           <h3 class="sub-title white" style="font-size:1.45rem;">Organisation & Interpretation</h3>
           <ul class="text-white">
@@ -214,7 +235,7 @@
             <li>Vergleiche mit Durchschnittswerten, saisonalen Schwankungen oder historischen Daten geben Orientierung.</li>
           </ul>
         </div>
-        <div class="image-card"><img src="Happy_Person_using_phone.jpg" alt="Person mit Smartphone" class="image-wide small" /></div>
+        <div class="image-card"><img src="verantwortungsvolle_person.jpg" alt="Person mit Smartphone" /></div>
       </div>
     </div>
   </section>
