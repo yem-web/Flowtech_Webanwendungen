@@ -1,62 +1,91 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-main{
-    flex: 1;
-    padding: 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  border-bottom: 1px solid #ddd;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+.logo img {
+  height: 55px;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background: #eee;
+  display: flex;
+  align-items: center;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #0b3a85;
+  font-weight: 500;
 }
 
-.nav-actions {
-    display: flex;
-    gap: 10px;
+.login-btn {
+  background-color: #0b2a5b;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+main {
+  min-height: 600px;
 }
 
 footer {
-    background: white;
-    border-top: 1px solid black;
-}
-
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0;
-
+  border-top: 1px solid #ddd;
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .footer-left {
-    max-width: 40%;
+  width: 30%;
+}
 
+.footer-logo {
+  height: 45px;
+  margin-bottom: 15px;
+}
+
+.footer-left p {
+  color: #2d109f;
+  font-size: 14px;
 }
 
 .footer-right {
-    display: flex;
-    gap: 40px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-right div {
+  min-width: 150px;
+}
+
+.footer-right h4 {
+  margin-bottom: 12px;
+  color: #0b2a5b;
+}
+
+.footer-right a {
+  display: block;
+  text-decoration: none;
+  color: #2d109f;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-right a:hover {
+  color: #2d109f;
 }
