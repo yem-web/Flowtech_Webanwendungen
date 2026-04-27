@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Energieberatung | Flowtech Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     }
 
     body {
@@ -36,7 +42,7 @@
     header {
       background: #ffffff;
       padding: 20px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -49,17 +55,15 @@
       gap: 20px;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #214f84;
-      line-height: 1.1;
+    .logo-img {
+      height: 95px;
+      width: auto;
     }
 
-    .logo span {
-      display: block;
-      font-size: 1rem;
-      font-weight: normal;
+    .footer-logo {
+      height: 70px;
+      width: auto;
+      margin-bottom: 12px;
     }
 
     .nav-links {
@@ -67,71 +71,57 @@
       align-items: center;
       gap: 18px;
       font-size: 0.95rem;
+      font-weight: 600;
     }
 
     .btn {
       display: inline-block;
       padding: 12px 22px;
-      border-radius: 10px;
+      border-radius: 6px;
       font-weight: 600;
       transition: 0.25s ease;
+      text-align: center;
     }
 
     .btn-primary {
-      background: #f4ad39;
+      background: #123f73;
       color: #ffffff;
     }
 
     .btn-primary:hover {
-      background: #dd9725;
+      background: #0f3560;
     }
 
     .hero {
-      background: linear-gradient(135deg, #d9e9fb 0%, #9fc1e8 60%, #7ba7d8 100%);
-      padding: 80px 0;
+      background-image: url("FlowTechBanner.png");
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 190px;
       position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      right: -80px;
-      top: -40px;
-      width: 320px;
-      height: 320px;
-      background: rgba(41, 99, 168, 0.18);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      left: -60px;
-      bottom: -60px;
-      width: 240px;
-      height: 240px;
-      background: rgba(255, 255, 255, 0.22);
-      border-radius: 50%;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
       max-width: 720px;
+      text-align: left;
     }
 
     .hero h1 {
       font-size: clamp(2rem, 4vw, 3.2rem);
       color: #ffffff;
-      margin-bottom: 12px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.12);
+      margin-bottom: 8px;
+      font-weight: 800;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.25);
     }
 
     .hero p {
       font-size: 1.1rem;
       color: rgba(255,255,255,0.92);
       max-width: 620px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
 
     section {
@@ -142,6 +132,7 @@
       font-size: clamp(1.7rem, 3vw, 2.4rem);
       margin-bottom: 22px;
       color: #2f78ca;
+      font-weight: 800;
     }
 
     .analysis-grid {
@@ -155,8 +146,8 @@
       background: #4f81bd;
       color: #ffffff;
       padding: 28px;
-      border-radius: 14px;
-      box-shadow: 0 12px 28px rgba(28, 68, 112, 0.15);
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
     }
 
     .info-box p {
@@ -177,7 +168,7 @@
     .more-link {
       display: inline-block;
       margin-top: 8px;
-      font-weight: bold;
+      font-weight: 700;
       color: #ffffff;
     }
 
@@ -185,14 +176,15 @@
       width: 100%;
       height: 360px;
       object-fit: cover;
-      border-radius: 14px;
+      border-radius: 8px;
       margin-bottom: 18px;
-      box-shadow: 0 12px 28px rgba(28, 68, 112, 0.12);
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
     }
 
     .image-text p {
       color: #4e6887;
       margin-bottom: 14px;
+      font-size: 0.96rem;
     }
 
     .quote-section {
@@ -222,13 +214,15 @@
       background: #f4ad39;
       color: #ffffff;
       padding: 26px;
-      border-radius: 14px;
-      box-shadow: 0 12px 28px rgba(244, 173, 57, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(244, 173, 57, 0.18);
+      position: relative;
     }
 
     .steps-box h3 {
       font-size: 1.9rem;
       margin-bottom: 18px;
+      font-weight: 800;
     }
 
     .step {
@@ -241,41 +235,137 @@
       margin-bottom: 4px;
     }
 
-    .cta-section {
-      margin-top: 26px;
+    .cta-wrapper {
+      position: relative;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+      min-height: 420px;
+    }
+
+    .red-arrow {
+      position: absolute;
+      left: -235px;
+      top: 145px;
+      width: 260px;
+      transform: rotate(8deg);
+      z-index: 8;
     }
 
     .cta-card {
-      background: linear-gradient(135deg, #4f81bd 0%, #5d94d6 100%);
+      background: #4e95d9;
       color: #ffffff;
-      border-radius: 16px;
-      width: min(460px, 100%);
-      padding: 26px;
-      box-shadow: 0 14px 30px rgba(34, 79, 132, 0.16);
+      border-radius: 0;
+      width: min(736px, 100%);
+      min-height: 383px;
+      padding: 42px 34px;
+      box-shadow: 0 6px 18px rgba(22, 58, 99, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      align-items: center;
     }
 
     .cta-card h3 {
       font-size: 2rem;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
+      font-weight: 800;
+      line-height: 1.25;
     }
 
     .cta-card p {
-      margin-bottom: 18px;
+      margin-bottom: 24px;
       color: rgba(255,255,255,0.92);
+      font-size: 1rem;
+    }
+
+    .cta-card .btn-primary {
+      background: #efac48;
+      color: #ffffff;
+    }
+
+    .cta-card .btn-primary:hover {
+      background: #d99635;
+    }
+
+    .cta-images {
+      position: relative;
+      height: 280px;
+    }
+
+    .cta-images img {
+      position: absolute;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.14);
+      background: #ffffff;
+    }
+
+    .cta-person {
+      width: 155px;
+      height: 105px;
+      top: 15px;
+      left: 25px;
+      z-index: 3;
+    }
+
+    .cta-table {
+      width: 165px;
+      height: 115px;
+      top: 140px;
+      right: 10px;
+      z-index: 2;
+    }
+
+    .cta-email {
+      width: 70px;
+      height: 55px;
+      top: 95px;
+      right: 55px;
+      z-index: 6;
+      padding: 8px;
+      object-fit: contain;
+    }
+
+    .cta-calendar {
+      width: 115px;
+      height: 85px;
+      bottom: 55px;
+      left: 45px;
+      z-index: 4;
+    }
+
+    .cta-times {
+      width: 100px;
+      height: 78px;
+      bottom: 25px;
+      left: 105px;
+      z-index: 5;
+    }
+
+    .cta-brief {
+      width: 42px;
+      height: 42px;
+      top: 72px;
+      right: 82px;
+      z-index: 7;
+      object-fit: contain;
+      box-shadow: none;
+      background: transparent;
     }
 
     footer {
       background: #ffffff;
       border-top: 1px solid #dbe6f2;
-      padding: 42px 0;
+      padding: 45px 0;
       margin-top: 70px;
     }
 
     .footer-content {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 40px;
       flex-wrap: wrap;
     }
@@ -284,14 +374,39 @@
       max-width: 320px;
     }
 
-    .footer-brand h3 {
-      color: #214f84;
-      margin-bottom: 12px;
-    }
-
     .footer-brand p {
       color: #5c7591;
       font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #214f84;
+      transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+      color: #123f73;
+    }
+
+    .social-icons .material-symbols-outlined {
+      font-size: 24px;
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
     }
 
     .footer-links {
@@ -303,6 +418,7 @@
     .footer-links h4 {
       margin-bottom: 12px;
       color: #214f84;
+      font-weight: 700;
     }
 
     .footer-links a {
@@ -310,6 +426,11 @@
       margin-bottom: 8px;
       color: #5c7591;
       font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #214f84;
     }
 
     @media (max-width: 950px) {
@@ -318,12 +439,22 @@
         grid-template-columns: 1fr;
       }
 
-      .cta-section {
+      .cta-wrapper {
         justify-content: stretch;
+        min-height: auto;
+      }
+
+      .red-arrow {
+        display: none;
       }
 
       .cta-card {
         width: 100%;
+        grid-template-columns: 1fr;
+      }
+
+      .cta-images {
+        height: 260px;
       }
 
       .navbar {
@@ -336,16 +467,36 @@
         justify-content: space-between;
         flex-wrap: wrap;
       }
+
+      .footer-content {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 600px) {
+      .logo-img {
+        height: 45px;
+      }
+
+      .footer-logo {
+        height: 50px;
+      }
+
       .hero {
-        padding: 60px 0;
+        min-height: 170px;
+        background-position: top center;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
       }
 
       .btn {
         width: 100%;
-        text-align: center;
       }
 
       .nav-links {
@@ -359,13 +510,24 @@
       blockquote {
         font-size: 1.1rem;
       }
+
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-images {
+        height: 260px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container navbar">
-      <a href="#" class="logo">FLOWtech <span>Services</span></a>
+      <a href="#">
+        <img src="FlowTech.png" alt="Flowtech Logo" class="logo-img">
+      </a>
+
       <nav class="nav-links">
         <a href="#analyse">Services</a>
         <a href="#kontakt" class="btn btn-primary">Login oder Registrieren</a>
@@ -403,7 +565,7 @@
         </div>
 
         <div class="image-text">
-          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Solar- und Windenergie" />
+          <img src="photovoltaik.jpg" alt="Solar- und Windenergie" />
           <p>
             Energie ist längst mehr als nur ein alltäglicher Kostenfaktor. Sie beeinflusst unsere Lebensqualität, unsere Umwelt und die Zukunft kommender Generationen. Dennoch wird das eigene Energieverhalten im Alltag oft unterschätzt oder gar nicht hinterfragt.
           </p>
@@ -445,11 +607,24 @@
           </div>
         </div>
 
-        <div class="cta-section">
+        <div class="cta-wrapper">
+          <img src="roter_Pfeil.png" alt="Roter Pfeil" class="red-arrow">
+
           <div class="cta-card">
-            <h3>Starten Sie jetzt Ihre Flow Journey !</h3>
-            <p>Ihre Registrierung ist nur wenige Klicks entfernt und der erste Schritt zu mehr Energieeffizienz.</p>
-            <a href="#kontakt" class="btn btn-primary">Registrieren</a>
+            <div class="cta-text">
+              <h3>Starten Sie jetzt Ihre Flow Journey !</h3>
+              <p>Ihre Registrierung ist nur wenige Klicks entfernt und der erste Schritt zu mehr Energieeffizienz.</p>
+              <a href="#kontakt" class="btn btn-primary">Registrieren</a>
+            </div>
+
+            <div class="cta-images">
+              <img src="gettyimages-2173588178-612x612.jpg" alt="Beratungsgespräch" class="cta-person">
+              <img src="Smart_Meter_vs_no_Smart_Meter.png" alt="Smart Meter Tabelle" class="cta-table">
+              <img src="Email.png" alt="Email" class="cta-email">
+              <img src="Termin_Kalender.png" alt="Termin Kalender" class="cta-calendar">
+              <img src="Terminzeiten.png" alt="Terminzeiten" class="cta-times">
+              <img src="Brief_emoji.png" alt="Brief Emoji" class="cta-brief">
+            </div>
           </div>
         </div>
       </div>
@@ -459,8 +634,20 @@
   <footer id="kontakt">
     <div class="container footer-content">
       <div class="footer-brand">
-        <h3>FLOWtech Services</h3>
+        <img src="FlowTech.png" alt="Flowtech Logo" class="footer-logo">
         <p>Ihr smarter Begleiter für einen bewussten und effizienten Stromverbrauch.</p>
+
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <span class="material-symbols-outlined">photo_camera</span>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <span class="material-symbols-outlined">business</span>
+          </a>
+          <a href="#" aria-label="X">
+            <span class="material-symbols-outlined">close</span>
+          </a>
+        </div>
       </div>
 
       <div class="footer-links">
@@ -476,6 +663,7 @@
           <a href="#">Blog</a>
           <a href="#">Case studies</a>
           <a href="#">Customer stories</a>
+          <a href="#">Best practices</a>
         </div>
 
         <div>
